@@ -1,0 +1,15 @@
+{
+  "name": "front-app-start-kit",
+  "version": "1.0.0",
+  "description": "front-end app starter kit",
+  "main": "index.js",
+  "author": "eSender",
+  "license": "MIT",
+  "devDependencies": {
+    "@webpack-blocks/babel6": "^0.4.1",
+    "@webpack-blocks/css-modules": "^0.4.0",
+    "@webpack-blocks/dev-server2": "^0.4.0",
+    "@webpack-blocks/extract-text2": "^0.4.0",
+    "@webpack-blocks/webpack2": "^0.4.0"
+  }
+}
