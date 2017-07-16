@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Welcome from '_components/Welcome/Welcome';
+import WelcomeContainer from '_components/WelcomeContainer';
 import LoginContainer from '_containers/LoginContainer';
 
 import {

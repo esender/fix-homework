@@ -1,5 +1,6 @@
 import { observable } from 'mobx';
 
+const initialState = localStorage.getItem('authentication');
 const DEFAULT_USER = { login: null, isAuthenticated: false };
 
 class AuthenticateStore {
@@ -45,4 +46,4 @@ class AuthenticateStore {
   }
 }
 
-export default AuthenticateStore;
+export default AuthenticateStore.fromJS(initialState || {});
