@@ -48,7 +48,10 @@ const config = createConfig([
     'process.env.NODE_ENV': process.env.NODE_ENV,
   }),
   resolveAliases({
-    _pages: path.resolve(__dirname, 'src/app/pages'),
+    _components: path.resolve(__dirname, 'src/app/components'),
+    _containers: path.resolve(__dirname, 'src/app/containers'),
+    _stores: path.resolve(__dirname, 'src/app/stores'),
+    _shared: path.resolve(__dirname, 'src/app/shared'),
   }),
   env('development', [
     addPlugins(developmentPlugins),
