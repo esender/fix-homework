@@ -48,7 +48,7 @@ const config = createConfig([
     'process.env.NODE_ENV': process.env.NODE_ENV,
   }),
   resolveAliases({
-    _example: path.resolve(__dirname, 'src/app/example'),
+    _pages: path.resolve(__dirname, 'src/app/pages'),
   }),
   env('development', [
     addPlugins(developmentPlugins),
