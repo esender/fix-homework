@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Formsy from 'formsy-react';
 import Input from '_shared/Form/Input';
 import { observer } from 'mobx-react';
+import { Button } from 'react-bootstrap';
 
 import StepButtons from './StepButtons';
 
@@ -34,7 +35,7 @@ class StepOne extends Component {
             ))
           }
         </Formsy.Form>
-        <button onClick={() => store.addValue()}>+</button>
+        <Button bsStyle="success" onClick={() => store.addValue()}>Добавить поле</Button>
         <StepButtons store={store} />
       </div>
     );

@@ -4,7 +4,8 @@ import Formsy from 'formsy-react';
 import Input from '_shared/Form/Input';
 import { observer } from 'mobx-react';
 
-import { Table } from 'react-bootstrap';
+import { Table, Button } from 'react-bootstrap';
+
 import StepButtons from './StepButtons';
 
 @observer
@@ -21,7 +22,7 @@ class StepTwo extends Component {
         <Formsy.Form onChange={this.handleChange}>
           <Input name="filter" value="" placeholder="Фильтр" />
         </Formsy.Form>
-        <button onClick={() => store.toggleOrder()}>Toggle</button>
+        <Button bsStyle="success" onClick={() => store.toggleOrder()}>Сменить сортировку</Button>
         <Table>
           <thead>
             <tr>

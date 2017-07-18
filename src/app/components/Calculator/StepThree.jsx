@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { observer } from 'mobx-react';
+import { Well } from 'react-bootstrap';
+
 import StepButtons from './StepButtons';
 
 @observer
@@ -17,7 +19,9 @@ class StepThree extends Component {
 
     return (
       <div>
-        Checking
+        <Well>
+          Пожалуйста подождите. Процесс расчета...
+        </Well>
         <StepButtons store={store} />
       </div>
     );

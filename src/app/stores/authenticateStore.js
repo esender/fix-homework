@@ -1,4 +1,7 @@
-import { observable } from 'mobx';
+import { observable, computed } from 'mobx';
+
+const LOGIN = 'user@gmail.com';
+const PASSWORD = 'password';
 
 const initialState = localStorage.getItem('authentication');
 const DEFAULT_USER = { login: null, isAuthenticated: false };
@@ -15,7 +18,7 @@ class AuthenticateStore {
   }
 
   signIn({ login, password }) {
-    if (login === 'a@a.com' && password === 'b') {
+    if (login === LOGIN && password === PASSWORD) {
       this.authenticate(login);
     } else {
       this.unauthenticate();
@@ -32,6 +35,11 @@ class AuthenticateStore {
     this.login = null;
     this.isAuthenticated = false;
     this.error = 'Не удалось авторизироваться. Некорректная пара логин/пароль.';
+  }
+
+  @computed get escapedLogin() {
+    const [ user, host ] = this.login.split('@');
+    return `${user}@${host.replace(/(?!^).+?(?=\.)/, (match) => Array(match.length + 1).join('*'))}`;
   }
 
   toJS() {

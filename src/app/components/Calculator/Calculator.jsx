@@ -19,14 +19,14 @@ const STEPS = {
 @observer
 class Calculator extends Component {
   render() {
-    const { calculatorStore } = this.props;
+    const { calculatorStore, authStore } = this.props;
     const stepStore = calculatorStore.step;
     const Step = STEPS[stepStore.NAME];
 
     return (
       <div>
         <div className="left">
-          Calculator Left
+          Привет, {authStore.escapedLogin}!
         </div>
         <div className="right">
           <Step store={calculatorStore.step} />
