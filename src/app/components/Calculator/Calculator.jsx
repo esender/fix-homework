@@ -4,10 +4,14 @@ import { observer } from 'mobx-react';
 
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
+import StepThree from './StepThree';
+import StepFour from './StepFour';
 
 const STEPS = {
   StepOne,
   StepTwo,
+  StepThree,
+  StepFour,
 };
 
 @observer

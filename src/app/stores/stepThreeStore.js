@@ -5,7 +5,7 @@ class StepThreeStore {
     this.calculator = calculator;
     this.NAME = 'StepThree';
     this.previousStepAvailable = false;
-    this.nextStepAvailable = true;
+    this.nextStepAvailable = false;
   }
 
   nextStep() {
