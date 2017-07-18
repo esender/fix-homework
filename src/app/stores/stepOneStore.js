@@ -1,4 +1,4 @@
-import { observable, computed } from 'mobx';
+import { computed } from 'mobx';
 
 class StepOneStore {
   constructor(calculator) {
@@ -8,11 +8,10 @@ class StepOneStore {
   }
 
   @computed get nextStepAvailable() {
-    return this.calculator.values.every((value) => value.length);
+    return this.calculator.values.every(value => value.length);
   }
 
   nextStep() {
-    console.log(1)
     this.calculator.nextStep();
   }
 

@@ -8,14 +8,15 @@ import StepTwo from './StepTwo';
 const STEPS = {
   StepOne,
   StepTwo,
-}
+};
+
 @observer
 class Calculator extends Component {
   render() {
     const { calculatorStore } = this.props;
     const stepStore = calculatorStore.step;
     const Step = STEPS[stepStore.NAME];
-    console.log('render');
+
     return (
       <div>
         <div>
@@ -29,6 +30,8 @@ class Calculator extends Component {
   }
 }
 
-Calculator.propTypes = {};
+Calculator.propTypes = {
+  calculatorStore: PropTypes.object.isRequired,
+};
 
 export default Calculator;

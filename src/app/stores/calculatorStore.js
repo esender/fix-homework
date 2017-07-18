@@ -1,7 +1,7 @@
 import { observable, computed } from 'mobx';
 
-import stepOneStore from './stepOneStore';
-import stepTwoStore from './stepTwoStore';
+import StepOneStore from './stepOneStore';
+import StepTwoStore from './stepTwoStore';
 
 class CalculatorStore {
   @observable currentStep;
@@ -10,8 +10,8 @@ class CalculatorStore {
   constructor() {
     this.currentStep = 0;
     this.steps = [
-      new stepOneStore(this),
-      new stepTwoStore(this),
+      new StepOneStore(this),
+      new StepTwoStore(this),
     ];
     this.values = ['', ''];
   }
