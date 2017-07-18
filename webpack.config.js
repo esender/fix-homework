@@ -42,7 +42,6 @@ const config = createConfig([
     publicPath: '/',
   }),
   babel(),
-  cssModules(),
   addPlugins(basePlugins),
   defineConstants({
     'process.env.NODE_ENV': process.env.NODE_ENV,

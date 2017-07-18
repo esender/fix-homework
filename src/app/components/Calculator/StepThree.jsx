@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import { observer } from 'mobx-react';
+import StepButtons from './StepButtons';
 
 @observer
 class StepThree extends Component {
@@ -17,10 +18,7 @@ class StepThree extends Component {
     return (
       <div>
         Checking
-        <button disabled={!store.previousStepAvailable}>
-          Previous
-        </button>
-        <button disabled={!store.nextStepAvailable}>Next</button>
+        <StepButtons store={store} />
       </div>
     );
   }

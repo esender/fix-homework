@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { observer } from 'mobx-react';
 
 import LoginForm from './LoginForm';
+import { Grid, Row, Col, Jumbotron } from 'react-bootstrap';
 
 @observer
 class Login extends Component {
@@ -22,10 +23,17 @@ class Login extends Component {
     }
 
     return (
-      <div>
-        Login
-        <LoginForm error={store.error} onSubmit={this.handleSubmit} />
-      </div>
+      <Grid>
+        <Row>
+          <Col
+            md={6}
+            mdOffset={3}
+          >
+            <h1>Пожалуйста авторизируйтесь</h1>
+            <LoginForm error={store.error} onSubmit={this.handleSubmit} />
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }

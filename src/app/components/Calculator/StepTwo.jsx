@@ -4,6 +4,9 @@ import Formsy from 'formsy-react';
 import Input from '_shared/Form/Input';
 import { observer } from 'mobx-react';
 
+import { Table } from 'react-bootstrap';
+import StepButtons from './StepButtons';
+
 @observer
 class StepTwo extends Component {
   handleChange = ({ filter }) => {
@@ -16,14 +19,24 @@ class StepTwo extends Component {
     return (
       <div>
         <Formsy.Form onChange={this.handleChange}>
-          <Input name="filter" value="" />
+          <Input name="filter" value="" placeholder="Фильтр" />
         </Formsy.Form>
         <button onClick={() => store.toggleOrder()}>Toggle</button>
-        {store.filteredValues.map(value => <span>{value}</span>)}
-        <button onClick={() => store.previousStep()} disabled={!store.previousStepAvailable}>
-          Previous
-        </button>
-        <button onClick={() => store.nextStep()} disabled={!store.nextStepAvailable}>Next</button>
+        <Table>
+          <thead>
+            <tr>
+              <th>Введенные данные</th>
+            </tr>
+          </thead>
+          <tbody>
+            {store.filteredValues.map((value, index) => (
+              <tr key={value + index}>
+                <td>{value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+        <StepButtons store={store} />
       </div>
     );
   }

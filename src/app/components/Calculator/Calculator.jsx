@@ -7,6 +7,8 @@ import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 import StepFour from './StepFour';
 
+import styles from './Calculator.css';
+
 const STEPS = {
   StepOne,
   StepTwo,
@@ -23,10 +25,10 @@ class Calculator extends Component {
 
     return (
       <div>
-        <div>
+        <div className="left">
           Calculator Left
         </div>
-        <div>
+        <div className="right">
           <Step store={calculatorStore.step} />
         </div>
       </div>

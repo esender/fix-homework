@@ -4,6 +4,8 @@ import Formsy from 'formsy-react';
 import Input from '_shared/Form/Input';
 import { observer } from 'mobx-react';
 
+import StepButtons from './StepButtons';
+
 @observer
 class StepOne extends Component {
   handleChange = (model) => {
@@ -22,13 +24,18 @@ class StepOne extends Component {
         <Formsy.Form onChange={this.handleChange}>
           {
             store.calculator.values.map((value, index) => (
-              <Input name={`${index}`} value={value} />
+              <Input
+                type="number"
+                name={`${index}`}
+                value={value}
+                placeholder="Положительное число"
+                min="0"
+              />
             ))
           }
         </Formsy.Form>
         <button onClick={() => store.addValue()}>+</button>
-        <button disabled={!store.previousStepAvailable}>Previous</button>
-        <button onClick={() => store.nextStep()} disabled={!store.nextStepAvailable}>Next</button>
+        <StepButtons store={store} />
       </div>
     );
   }
