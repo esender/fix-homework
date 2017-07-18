@@ -5,6 +5,7 @@ const DashboardPlugin = require('webpack-dashboard/plugin');
 
 exports.basePlugins = [
   new HtmlWebpackPlugin({
+    title: 'Калькулятор',
     inject: true,
     template: './src/index.html',
   }),

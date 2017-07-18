@@ -4,12 +4,14 @@ class StepFourStore {
   constructor(calculator) {
     this.calculator = calculator;
     this.NAME = 'StepFour';
+    this.DESCRIPTION = 'Результаты вычислений';
     this.previousStepAvailable = true;
     this.nextStepAvailable = false;
   }
 
   previousStep() {
-    this.calculator.previousStep();
+    this.calculator.clearValues();
+    this.calculator.previousStep(-3);
   }
 
   @computed get result() {

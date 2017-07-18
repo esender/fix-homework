@@ -5,12 +5,18 @@ import Formsy from 'formsy-react';
 import Input from '_shared/Form/Input';
 import { observer } from 'mobx-react';
 
-import { Table, Button } from 'react-bootstrap';
+import { Table, Button, ButtonGroup } from 'react-bootstrap';
 
 import StepButtons from './StepButtons';
 
 @observer
 class StepTwo extends Component {
+  constructor(props) {
+    super(props);
+
+    document.title = 'Подтверждение данных';
+  }
+
   handleChange = ({ filter }) => {
     this.props.store.setFilter(filter);
   }
@@ -23,7 +29,10 @@ class StepTwo extends Component {
         <Formsy.Form onChange={this.handleChange}>
           <Input name="filter" value="" placeholder="Фильтр" />
         </Formsy.Form>
-        <Button bsStyle="success" onClick={() => store.toggleOrder()}>Сменить сортировку</Button>
+        <ButtonGroup>
+          <Button bsStyle="success" onClick={() => store.orderBy('asc')}>По возрастанию</Button>
+          <Button bsStyle="success" onClick={() => store.orderBy('desc')}>По убыванию</Button>
+        </ButtonGroup>
         <Table>
           <thead>
             <tr>

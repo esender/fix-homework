@@ -27,6 +27,7 @@ class Calculator extends Component {
       <div>
         <div className="left">
           Привет, {authStore.escapedLogin}!
+          <p className="description">{stepStore.DESCRIPTION}</p>
         </div>
         <div className="right">
           <Step store={calculatorStore.step} />

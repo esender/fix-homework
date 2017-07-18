@@ -1,23 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
+import { Button, ButtonGroup } from 'react-bootstrap';
 
-const StepButtons = ({ store }) => (
+const StepButtons = ({ store, lastStep }) => (
   <div>
-    <Button
-      bsStyle={store.previousStepAvailable ? 'success' : 'default'}
-      disabled={!store.previousStepAvailable}
-      onClick={() => store.previousStep()}
-    >
-      Предыдущий шаг
-    </Button>
-    <Button
-      bsStyle={store.nextStepAvailable ? 'success' : 'default'}
-      disabled={!store.nextStepAvailable}
-      onClick={() => store.nextStep()}
-    >
-      Следующий шаг
-    </Button>
+    <ButtonGroup>
+      <Button
+        bsStyle={store.previousStepAvailable ? 'success' : 'default'}
+        disabled={!store.previousStepAvailable}
+        onClick={() => store.previousStep()}
+      >
+        {lastStep ? 'Вернуться к вводу данных' : 'Назад'}
+      </Button>
+      {
+        !lastStep &&
+          <Button
+            bsStyle={store.nextStepAvailable ? 'success' : 'default'}
+            disabled={!store.nextStepAvailable}
+            onClick={() => store.nextStep()}
+          >
+            Продолжить
+          </Button>
+      }
+    </ButtonGroup>
   </div>
 );
 
@@ -28,6 +33,11 @@ StepButtons.propTypes = {
     previousStep: PropTypes.func.isRequired,
     nextStep: PropTypes.func.isRequired,
   }).isRequired,
+  lastStep: PropTypes.bool,
+};
+
+StepButtons.defaultProps = {
+  lastStep: false,
 };
 
 export default StepButtons;

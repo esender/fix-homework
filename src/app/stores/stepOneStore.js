@@ -4,6 +4,7 @@ class StepOneStore {
   constructor(calculator) {
     this.calculator = calculator;
     this.NAME = 'StepOne';
+    this.DESCRIPTION = 'На данном шаге необходимо ввести целые положительные числа.';
     this.previousStepAvailable = false;
   }
 

@@ -37,9 +37,9 @@ function customConfig() {
 const config = createConfig([
   entryPoint('./src/app/index.jsx'),
   setOutput({
-    filename: 'bundle.js',
+    filename: 'app.min.js',
     path: path.resolve('dist'),
-    publicPath: '/',
+    publicPath: '',
   }),
   babel(),
   addPlugins(basePlugins),
@@ -61,7 +61,7 @@ const config = createConfig([
       maxEntrypointSize: 1500000,
     }),
   ]),
-  env('production', [extractText(), addPlugins(productionPlugins)]),
+  env('production', [extractText('app.min.css'), addPlugins(productionPlugins)]),
   customConfig(),
 ]);
 

@@ -7,6 +7,7 @@ class StepTwoStore {
   constructor(calculator) {
     this.calculator = calculator;
     this.NAME = 'StepTwo';
+    this.DESCRIPTION = 'Проверьте ваши данные и подтвердите их перейдя к следующему шагу.';
     this.previousStepAvailable = true;
     this.nextStepAvailable = true;
     this.filter = '';
@@ -18,11 +19,12 @@ class StepTwoStore {
   }
 
   previousStep() {
+    this.calculator.clearValues();
     this.calculator.previousStep();
   }
 
-  toggleOrder() {
-    this.order = this.order === 'asc' ? 'desc' : 'asc';
+  orderBy(order) {
+    this.order = order;
   }
 
   @computed get filteredValues() {

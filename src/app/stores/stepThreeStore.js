@@ -2,6 +2,7 @@ class StepThreeStore {
   constructor(calculator) {
     this.calculator = calculator;
     this.NAME = 'StepThree';
+    this.DESCRIPTION = 'Процесс расчета';
     this.previousStepAvailable = false;
     this.nextStepAvailable = false;
   }

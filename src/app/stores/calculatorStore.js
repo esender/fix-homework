@@ -24,16 +24,24 @@ class CalculatorStore {
     return this.steps[this.currentStep];
   }
 
-  nextStep() {
-    this.currentStep = this.currentStep + 1;
+  nextStep(step = 1) {
+    this.stepTo(step);
   }
 
-  previousStep() {
-    this.currentStep = this.currentStep - 1;
+  previousStep(step = -1) {
+    this.stepTo(step);
+  }
+
+  stepTo(delta) {
+    this.currentStep = this.currentStep + delta;
   }
 
   addValue() {
     this.values.push('');
+  }
+
+  clearValues() {
+    this.values = ['', ''];
   }
 
   updateValues(values) {

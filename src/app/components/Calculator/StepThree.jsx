@@ -12,6 +12,7 @@ class StepThree extends Component {
     super(props);
 
     setTimeout(() => this.props.store.nextStep(), 5000);
+    document.title = 'Расчет';
   }
 
   render() {
