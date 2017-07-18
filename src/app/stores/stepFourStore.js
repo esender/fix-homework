@@ -13,7 +13,7 @@ class StepFourStore {
   }
 
   @computed get result() {
-    return this.calculator.values.reduce((sum, value) => (sum + parseInt(value)), 0);
+    return this.calculator.values.reduce((sum, value) => (sum + parseInt(value, 10)), 0);
   }
 }
 

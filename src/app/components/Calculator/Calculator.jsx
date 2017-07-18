@@ -7,7 +7,7 @@ import StepTwo from './StepTwo';
 import StepThree from './StepThree';
 import StepFour from './StepFour';
 
-import styles from './Calculator.css';
+import './Calculator.css';
 
 const STEPS = {
   StepOne,
@@ -38,6 +38,7 @@ class Calculator extends Component {
 
 Calculator.propTypes = {
   calculatorStore: PropTypes.object.isRequired,
+  authStore: PropTypes.object.isRequired,
 };
 
 export default Calculator;

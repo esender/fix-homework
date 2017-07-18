@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 
 const StepButtons = ({ store }) => (
@@ -19,5 +20,14 @@ const StepButtons = ({ store }) => (
     </Button>
   </div>
 );
+
+StepButtons.propTypes = {
+  store: PropTypes.shape({
+    previousStepAvailable: PropTypes.bool.isRequired,
+    nextStepAvailable: PropTypes.bool.isRequired,
+    previousStep: PropTypes.func.isRequired,
+    nextStep: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default StepButtons;

@@ -26,6 +26,15 @@ class Input extends Component {
 Input.propTypes = {
   getValue: PropTypes.func.isRequired,
   setValue: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  type: PropTypes.string,
+  min: PropTypes.string,
+};
+
+Input.defaultProps = {
+  placeholder: '',
+  type: 'text',
+  min: null,
 };
 
 export default HOC(Input);

@@ -38,8 +38,9 @@ class AuthenticateStore {
   }
 
   @computed get escapedLogin() {
-    const [ user, host ] = this.login.split('@');
-    return `${user}@${host.replace(/(?!^).+?(?=\.)/, (match) => Array(match.length + 1).join('*'))}`;
+    const [user, host] = this.login.split('@');
+    const escapedHost = host.replace(/(?!^).+?(?=\.)/, match => Array(match.length + 1).join('*'));
+    return `${user}@${escapedHost}`;
   }
 
   toJS() {

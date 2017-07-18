@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import { observer } from 'mobx-react';
 
+import { Grid, Row, Col } from 'react-bootstrap';
 import LoginForm from './LoginForm';
-import { Grid, Row, Col, Jumbotron } from 'react-bootstrap';
 
 @observer
 class Login extends Component {

@@ -1,5 +1,3 @@
-import { computed } from 'mobx';
-
 class StepThreeStore {
   constructor(calculator) {
     this.calculator = calculator;
