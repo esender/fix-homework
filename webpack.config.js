@@ -23,12 +23,12 @@ function customConfig() {
     },
     module: {
       loaders: [
-        {
-          enforce: 'pre',
-          test: context.fileType('application/javascript'),
-          exclude: /node_modules/,
-          loader: 'eslint-loader',
-        },
+        // {
+        //   enforce: 'pre',
+        //   test: context.fileType('application/javascript'),
+        //   exclude: /node_modules/,
+        //   loader: 'eslint-loader',
+        // },
       ],
     },
   });
